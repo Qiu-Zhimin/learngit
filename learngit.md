@@ -39,3 +39,19 @@ $ rm test.txt
 **另一种**情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：`git checkout -- test.txt`
 
 ## 添加远程仓
+在github上新建一个仓库之后，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。
+
+在本地的learngit仓库下运行命令：
+```  
+git remote add origin git@github.com:Yourname/learngit.git 
+```
+下一步，就可以把本地库的所有内容推送到远程库上：
+`$ git push -u origin master`
+
+从现在起，只要本地作了提交，就可以通过命令：
+`$ git push origin master`
+把本地master分支的最新修改推送至GitHub，现在，你就拥有了真正的分布式版本库！
+
+## 从远程库克隆
+要克隆一个仓库，首先必须知道仓库的地址，然后使用`git clone`命令克隆。
+Git支持多种协议，包括https，但ssh协议速度最快。
